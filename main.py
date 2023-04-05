@@ -14,13 +14,19 @@ def error(error):
   os.system("python main.py")
 
 
-def ded(board1, board2, board3, board4, board5):
+def ded(board1, board2, board3, board4, board5, score):
   os.system("clear")
   print_board(board1, board2, board3, board4, board5)
-  sleep(2)
-  os.system("clear")
-  os.system("python main.py")
-
+  print("\n")
+  print("You Died")
+  print("Total Score: {0:1}".format(score))
+  sleep(3)
+  i = input("Again? (y/n) ")
+  if i.capitalize() == "Y":
+    os.system("clear")
+    os.system("python main.py")
+  else:
+    quit()
 
 def tutorial():
   tutext = "1. Type in a letter and a number to choose where your player will be placed. Zero is an empty space. After you choose your coordinates bombs will be dropped at random coordinates and you have to hope you dont get hit. Try to get as many points as possible. The player is the number one and the bombs is two."
@@ -29,6 +35,12 @@ def tutorial():
     os.system("clear")
     print(tutext[:x])
     sleep(0.05)
+
+  print("\n")
+  i = input("Enter to go back")
+
+  os.system("clear")
+  os.system("python main.py")
 
 
 def main():
@@ -64,7 +76,7 @@ def start_game():
 
   died = False
 
-  while died == False:
+  while not died:
     os.system("clear")
 
     board1 = [0, 0, 0, 0, 0]
@@ -145,7 +157,7 @@ def start_game():
         else:
           board5[randnum - 1] = 2
       if died == True:
-        ded(board1, board2, board3, board4, board5)
+        ded(board1, board2, board3, board4, board5, score)
         break
 
     score += 1
