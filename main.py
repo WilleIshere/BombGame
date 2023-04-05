@@ -1,4 +1,4 @@
-# game by Willele
+# game by Willele https://github.com/Willele589/
 
 import random
 from time import sleep
