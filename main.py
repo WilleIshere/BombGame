@@ -7,7 +7,6 @@ import os
 
 score = 0
 
-
 def error(error):
   os.system("clear")
   print(error, "Restarting")
@@ -26,12 +25,9 @@ def ded(board1, board2, board3, board4, board5):
 def tutorial():
   tutext = "1. Type in a letter and a number to choose where your player will be placed. Zero is an empty space. After you choose your coordinates bombs will be dropped at random coordinates and you have to hope you dont get hit. Try to get as many points as possible. The player is the number one and the bombs is two."
 
-  index = 0
-
   for x in range(0, len(tutext)):
-    index += 1
     os.system("clear")
-    print(tutext[:index])
+    print(tutext[:x])
     sleep(0.05)
 
 
