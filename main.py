@@ -1,3 +1,5 @@
+# game by Willele
+
 import random
 from time import sleep
 from art import *
@@ -84,7 +86,7 @@ def start_game():
     i = input()
 
     os.system("clear")
-    if int(i[-1]) > 5:
+    if int(i[-1]) >= 6:
       error("Invalid coordinate")
     if i[0] == "a":
       board1[int(i[-1]) - 1] = 1
@@ -158,10 +160,9 @@ def start_game():
     print("\n")
     print("You Survived!")
     print("+1 Score")
-    print("Total: ", score)
+    print("Total:", score)
     print("\n")
 
-    sleep(5)
-
+    sleep(3)
 
 main()
